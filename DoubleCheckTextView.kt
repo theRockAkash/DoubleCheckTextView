@@ -14,7 +14,7 @@ class DoubleCheckTextView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : FrameLayout(context, attrs, defStyle) {
 
-    var status = 0
+    var status = -1
     private var binding: DoubleCheckTextviewBinding
 
     init {
@@ -26,16 +26,16 @@ class DoubleCheckTextView @JvmOverloads constructor(
                 binding.yes.isChecked = false
                 status = 1
             } else {
-                status = 0
+                status = -1
             }
             Log.w("TAG", "no=============      $status: ")
         }
         binding.yes.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
                 binding.no.isChecked = false
-                status = 2
-            } else {
                 status = 0
+            } else {
+                status = -1
             }
             Log.w("TAG", "yes=============      $status: ")
         }
