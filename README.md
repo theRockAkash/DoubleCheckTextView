@@ -7,6 +7,7 @@
 <com.app.app.DoubleCheckTextView
                     android:id="@+id/cb_view"
                     setText="@{@string/title}"
+                    setStatus="@{data.status}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -21,6 +22,11 @@
 fun com.app.app.DoubleCheckTextView.setText(text: String) {
     setTextContent(text)
 }
+@androidx.databinding.BindingAdapter("setStatus")
+fun DoubleCheckTextView.setStatus(text: Int) {
+    setStatusContent(text)
+}
+
 
 ```
 
