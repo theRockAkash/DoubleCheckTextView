@@ -52,7 +52,7 @@ class DoubleCheckTextView @JvmOverloads constructor(
                 binding.yes.isChecked = false
             }
 
-            2 -> {
+           -1 -> {
                 binding.no.isChecked = true
                 binding.yes.isChecked = false
             }
