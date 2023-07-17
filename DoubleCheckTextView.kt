@@ -44,4 +44,24 @@ class DoubleCheckTextView @JvmOverloads constructor(
     fun setTextContent(text: String) {
         binding.text.text = text
     }
+      fun setStatusContent(text: Int) {
+        status = text
+        when (text) {
+            0 -> {
+                binding.no.isChecked = false
+                binding.yes.isChecked = false
+            }
+
+            2 -> {
+                binding.no.isChecked = true
+                binding.yes.isChecked = false
+            }
+
+            1 -> {
+                binding.no.isChecked = false
+                binding.yes.isChecked = true
+            }
+        }
+
+    }
 }
